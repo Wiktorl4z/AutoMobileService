@@ -17,6 +17,7 @@ public class Car {
     public Car(){}
 
     public Car(Long id, String name, Long price, Long engine) {
+        super();
         this.id = id;
         this.name = name;
         this.price = price;
