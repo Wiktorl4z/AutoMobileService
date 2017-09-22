@@ -47,7 +47,7 @@ public class LoanService {
         loanRepository.save(loan);
     }
 
-    public void deleteCourse(Long id) {
+    public void delete(Long id) {
         loanRepository.delete(id);
     }
 

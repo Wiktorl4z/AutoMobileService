@@ -1,5 +1,6 @@
 package com.example.demo.Loans;
 
+import com.example.demo.Cars.Car;
 import com.example.demo.Customers.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -61,6 +62,23 @@ public class LoanController {
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/loans/{loansId}/customers/{id}")
     public void deleteCustomer(@PathVariable Long id) {
-        loanService.deleteCourse(id);
+        loanService.delete(id);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/loans/{loansId}/cars")
+    public void addCar(@RequestBody Loan loan, @PathVariable Long loansId) {
+        loan.setCar(new Car(loansId, "", loansId,loansId));
+        loanService.addCustomer(loan);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/loans/{loansId}/cars/{id}")
+    public void updateCar(@RequestBody Loan loan, @PathVariable Long loansId, @PathVariable Long id) {
+        loan.setCar(new Car(loansId, "", loansId,loansId));
+        loanService.updateCustomer(loan);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/loans/{loansId}/cars/{id}")
+    public void deleteCar(@PathVariable Long id) {
+        loanService.delete(id);
     }
 }
