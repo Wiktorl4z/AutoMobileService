@@ -35,5 +35,4 @@ public class CarController {
     public void updateCar(@PathVariable Long id) {
         carService.deleteCar(id);
     }
-
 }
