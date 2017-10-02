@@ -1,4 +1,4 @@
-package com.example.demo.Loans;
+package com.example.demo.Hires;
 
 import com.example.demo.Cars.Car;
 import com.example.demo.Customers.Customer;
@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 
 @Data
 @Entity
-public class Loan {
+public class Hire {
 
     @Id
     private Long id;
@@ -21,10 +21,10 @@ public class Loan {
     @ManyToOne
     private Car car;
 
-    public Loan() {
+    public Hire() {
     }
 
-    public Loan(Long id, String name, String description, Long customerId, Long documentId, Long carId, Long price,
+    public Hire(Long id, String name, String description, Long customerId, Long documentId, Long carId, Long price,
                 Long engine) {
         this.id = id;
         this.name = name;
