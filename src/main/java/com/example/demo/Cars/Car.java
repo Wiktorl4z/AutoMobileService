@@ -1,26 +1,27 @@
 package com.example.demo.Cars;
 
+import com.example.demo.Hires.Hire;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
+@Table(name = "car")
 public class Car {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String name;
-    private Long price;
-    private Long engine;
+    private double price;
+    private String engine;
+    @JsonIgnore
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    private Set<Hire> hire;
 
-    public Car(){}
-
-    public Car(Long id, String name, Long price, Long engine) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.engine = engine;
+    public Car() {
     }
 }

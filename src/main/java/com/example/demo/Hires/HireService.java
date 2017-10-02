@@ -28,7 +28,7 @@ public class HireService {
         hireRepository.save(hire);
     }
 
-    public void updateHire(Long id, Hire hire) {
+    public void updateHire(Hire hire) {
         hireRepository.save(hire);
     }
 
@@ -36,26 +36,4 @@ public class HireService {
         hireRepository.delete(id);
     }
 
-    public List<Hire> getAllCustomers(Long customerId) {
-        List<Hire> courses = new ArrayList<>();
-        hireRepository.findByCustomerId(customerId)
-                .forEach(courses::add);
-        return courses;
-    }
-
-    public void addCustomer(Hire hire) {
-        hireRepository.save(hire);
-    }
-
-    public void delete(Long id) {
-        hireRepository.delete(id);
-    }
-
-    public Hire getCustomerId(Long id) {
-        return hireRepository.findOne(id);
-    }
-
-    public void updateCustomer(Hire hire) {
-        hireRepository.save(hire);
-    }
 }

@@ -1,7 +1,5 @@
 package com.example.demo.Hires;
 
-import com.example.demo.Cars.Car;
-import com.example.demo.Customers.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,24 +17,24 @@ public class HireController {
         return hireService.getAllHires();
     }
 
-    @RequestMapping("/{id}")
-    public Hire getHireId(@PathVariable Long id) {
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
+    public Hire getHire(@PathVariable Long id) {
         return hireService.getHireId(id);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void addCar(@RequestBody Hire hire) {
+    public void addHire(@RequestBody Hire hire) {
+        System.out.println("HERE HERE HERE");
         hireService.addHire(hire);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
-    public void updateCar(@RequestBody Hire hire, @PathVariable Long id) {
-        hireService.updateHire(id, hire);
+    public void updateHire(@RequestBody Hire hire) {
+        hireService.updateHire(hire);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public void updateCar(@PathVariable Long id) {
+    public void deleteHire(@PathVariable Long id) {
         hireService.deleteHire(id);
     }
-
 }
