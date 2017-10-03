@@ -1,4 +1,4 @@
-package com.example.demo.Cars;
+package com.wiktor.Cars;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,10 +9,14 @@ import java.util.List;
 @RestController
 public class CarController {
 
-    @Autowired
     private CarService carService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @Autowired
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
+
+    @GetMapping
     public List<Car> getAllCars() {
         return carService.getAllCars();
     }
@@ -22,18 +26,18 @@ public class CarController {
         return carService.getCarId(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public void addCar(@RequestBody Car car) {
         carService.addCar(car);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
-    public void updateCar(@RequestBody Car car, @PathVariable Long id) {
-        carService.updateCar(id, car);
+    @PutMapping(value = "/{id}")
+    public void updateCar(@RequestBody Car car) {
+        carService.updateCar(car);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public void updateCar(@PathVariable Long id) {
+    @DeleteMapping(value = "/{id}")
+    public void deleteCar(@PathVariable Long id) {
         carService.deleteCar(id);
     }
 }

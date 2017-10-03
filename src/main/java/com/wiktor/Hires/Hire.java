@@ -1,11 +1,12 @@
-package com.example.demo.Hires;
+package com.wiktor.Hires;
 
-import com.example.demo.Cars.Car;
-import com.example.demo.Customers.Customer;
+import com.wiktor.Cars.Car;
+import com.wiktor.Customers.Customer;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.*;
+
 
 @Data
 @Entity
@@ -16,8 +17,8 @@ public class Hire {
     private long id;
     private String name;
     private String description;
-    private Date hireDate;
-    private Date returnDate;
+    private LocalDateTime hireDate;
+    private LocalDateTime returnDate;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;

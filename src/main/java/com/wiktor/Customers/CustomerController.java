@@ -1,4 +1,4 @@
-package com.example.demo.Customers;
+package com.wiktor.Customers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,10 +9,14 @@ import java.util.List;
 @RestController
 public class CustomerController {
 
-    @Autowired
     private CustomerService customerService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @Autowired
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
+    @GetMapping
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }
@@ -22,17 +26,17 @@ public class CustomerController {
         return customerService.getCustomerId(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public void addCustomer(@RequestBody Customer customer) {
         customerService.addCustomer(customer);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
-    public void updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
-        customerService.updateCustomer(id, customer);
+    @PutMapping(value = "/{id}")
+    public void updateCustomer(@RequestBody Customer customer) {
+        customerService.updateCustomer(customer);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
+    @DeleteMapping(value = "/{id}")
     public void deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
     }

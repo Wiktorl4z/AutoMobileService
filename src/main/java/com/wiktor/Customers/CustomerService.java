@@ -1,4 +1,4 @@
-package com.example.demo.Customers;
+package com.wiktor.Customers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,13 +9,15 @@ import java.util.List;
 @Service
 public class CustomerService {
 
-    @Autowired
     CustomerRepository customerRepository;
 
     public List<Customer> getAllCustomers() {
-        List<Customer> customers = new ArrayList<>();
-        customerRepository.findAll().forEach(customers::add);
-        return customers;
+        return customerRepository.findAll();
+    }
+
+    @Autowired
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
     public Customer getCustomerId(Long id) {
@@ -26,7 +28,7 @@ public class CustomerService {
         customerRepository.save(customer);
     }
 
-    public void updateCustomer(Long id, Customer customer) {
+    public void updateCustomer(Customer customer) {
         customerRepository.save(customer);
     }
 

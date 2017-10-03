@@ -1,10 +1,11 @@
-package com.example.demo.Cars;
+package com.wiktor.Cars;
 
-import com.example.demo.Hires.Hire;
+import com.wiktor.Hires.Hire;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Data
@@ -16,7 +17,7 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-    private double price;
+    private BigDecimal price;
     private String engine;
     @JsonIgnore
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)

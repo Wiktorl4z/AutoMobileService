@@ -1,23 +1,24 @@
-package com.example.demo.Hires;
+package com.wiktor.Hires;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class HireService {
 
-    @Autowired
     private HireRepository hireRepository;
 
     @RequestMapping("/hires/")
     public List<Hire> getAllHires() {
-        List<Hire> hires = new ArrayList<>();
-        hireRepository.findAll().forEach(hires::add);
-        return hires;
+        return hireRepository.findAll();
+    }
+
+    @Autowired
+    public HireService(HireRepository hireRepository) {
+        this.hireRepository = hireRepository;
     }
 
     public Hire getHireId(Long id) {

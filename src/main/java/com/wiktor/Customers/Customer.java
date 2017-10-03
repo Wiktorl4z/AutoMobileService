@@ -1,6 +1,6 @@
-package com.example.demo.Customers;
+package com.wiktor.Customers;
 
-import com.example.demo.Hires.Hire;
+import com.wiktor.Hires.Hire;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
@@ -17,7 +17,7 @@ public class Customer {
     private long id;
     private String firstName;
     private String lastName;
-    private Long documentId;
+    private long documentId;
     @JsonIgnore
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Hire> hire;
