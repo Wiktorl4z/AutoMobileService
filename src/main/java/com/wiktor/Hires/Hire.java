@@ -1,7 +1,7 @@
-package com.wiktor.Hires;
+package com.wiktor.hires;
 
-import com.wiktor.Cars.Car;
-import com.wiktor.Customers.Customer;
+import com.wiktor.cars.Car;
+import com.wiktor.customers.Customer;
 import lombok.Data;
 
 import javax.persistence.*;

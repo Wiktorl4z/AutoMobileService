@@ -1,6 +1,6 @@
-package com.wiktor.Customers;
+package com.wiktor.customers;
 
-import com.wiktor.Hires.Hire;
+import com.wiktor.hires.Hire;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
