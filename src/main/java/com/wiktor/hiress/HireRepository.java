@@ -1,4 +1,4 @@
-package com.wiktor.hires;
+package com.wiktor.hiress;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

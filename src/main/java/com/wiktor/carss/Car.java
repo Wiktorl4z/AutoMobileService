@@ -1,6 +1,6 @@
-package com.wiktor.cars;
+package com.wiktor.carss;
 
-import com.wiktor.hires.Hire;
+import com.wiktor.hiress.Hire;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 

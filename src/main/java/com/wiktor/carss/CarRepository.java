@@ -1,4 +1,4 @@
-package com.wiktor.cars;
+package com.wiktor.carss;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

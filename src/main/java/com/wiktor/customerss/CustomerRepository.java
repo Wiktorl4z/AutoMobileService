@@ -1,4 +1,4 @@
-package com.wiktor.customers;
+package com.wiktor.customerss;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

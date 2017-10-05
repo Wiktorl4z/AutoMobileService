@@ -1,4 +1,4 @@
-package com.wiktor.customers;
+package com.wiktor.customerss;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

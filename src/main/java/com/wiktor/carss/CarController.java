@@ -1,4 +1,4 @@
-package com.wiktor.cars;
+package com.wiktor.carss;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

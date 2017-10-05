@@ -1,7 +1,7 @@
-package com.wiktor.hires;
+package com.wiktor.hiress;
 
-import com.wiktor.cars.Car;
-import com.wiktor.customers.Customer;
+import com.wiktor.carss.Car;
+import com.wiktor.customerss.Customer;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,8 +17,8 @@ public class Hire {
     private long id;
     private String name;
     private String description;
-    private LocalDateTime hireDate;
-    private LocalDateTime returnDate;
+    private ZonedDateTime hireDate;
+    private ZonedDateTime returnDate;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
